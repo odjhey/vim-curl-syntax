@@ -8,7 +8,7 @@ if exists("b:current_syntax")
 endif
 
 syn keyword basicLanguageKeywords curl POST GET PUT DELETE
-syn keyword curlArgs --location --request --header 
+syn keyword curlArgs --location --request 
 
 " Regular int like number with - + or nothing in front
 syn match curlNumber '\d\+' display
@@ -27,7 +27,10 @@ syn match curlNumber '[-+]\=\d[[:digit:]]*\.\d*[eE][\-+]\=\d\+' display
 syn match curlNumber '\d[[:digit:]]*\.\d*[eE][\-+]\=\d\+' display
 
 syn region curlString start='"' end='"'
-syn keyword curlArgs --data-raw nextGroup=curlNumber skipwhite
+syn region curlBodyBlock start="{" end="}" fold transparent contains=curlString,curlNumber
+
+syn keyword curlArgs --data-raw 
+syn keyword curlArgs --header nextGroup=curlString skipwhite
 
 let b:current_syntax = "curl"
 
