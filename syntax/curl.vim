@@ -11,22 +11,22 @@ syn keyword basicLanguageKeywords curl POST GET PUT DELETE
 syn keyword curlArgs --location --request --header --data-raw
 
 " Regular int like number with - + or nothing in front
-syn match curlNumber '\d\+' contained display
-syn match curlNumber '[-+]\d\+' contained display
+syn match curlNumber '\d\+' display
+syn match curlNumber '[-+]\d\+' display
 
 " Floating point number with decimal no E or e (+,-)
-syn match curlNumber '\d\+\.\d*' contained display
-syn match curlNumber '[-+]\d\+\.\d*' contained display
+syn match curlNumber '\d\+\.\d*' display
+syn match curlNumber '[-+]\d\+\.\d*' display
 
 " Floating point like number with E and no decimal point (+,-)
-syn match curlNumber '[-+]\=\d[[:digit:]]*[eE][\-+]\=\d\+' contained display
-syn match curlNumber '\d[[:digit:]]*[eE][\-+]\=\d\+' contained display
+syn match curlNumber '[-+]\=\d[[:digit:]]*[eE][\-+]\=\d\+' display
+syn match curlNumber '\d[[:digit:]]*[eE][\-+]\=\d\+' display
 
 " Floating point like number with E and decimal point (+,-)
-syn match curlNumber '[-+]\=\d[[:digit:]]*\.\d*[eE][\-+]\=\d\+' contained display
-syn match curlNumber '\d[[:digit:]]*\.\d*[eE][\-+]\=\d\+' contained display
+syn match curlNumber '[-+]\=\d[[:digit:]]*\.\d*[eE][\-+]\=\d\+' display
+syn match curlNumber '\d[[:digit:]]*\.\d*[eE][\-+]\=\d\+' display
 
-syn region curlString start='"' end='"' contained
+syn region curlString start='"' end='"'
 
 let b:current_syntax = "curl"
 
