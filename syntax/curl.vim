@@ -10,3 +10,8 @@ endif
 syn keyword basicLanguageKeywords curl POST GET PUT DELETE
 syn keyword curlArgs --location --request --header --data-raw
 
+let b:current_syntax = "curl"
+
+hi def link basicLanguageKeywords    Statement
+hi def link curlArgs                 Type
+
