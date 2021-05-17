@@ -30,7 +30,8 @@ syn region curlString start='"' end='"' contained
 syn region curlBodyBlock start="{" end="}" fold transparent contains=curlString,curlNumber
 
 syn keyword curlArgs --data-raw 
-syn keyword curlArgs --header nextGroup=curlString skipwhite
+syn region  curlArgVals start="'" end="'"
+syn keyword curlArgs --header nextGroup=curlArgVals skipwhite
 
 let b:current_syntax = "curl"
 
@@ -38,3 +39,4 @@ hi def link basicLanguageKeywords    Statement
 hi def link curlArgs                 Type
 hi def link curlString               String
 hi def link curlNumber               Number
+hi def link curlArgVals              PreProc
