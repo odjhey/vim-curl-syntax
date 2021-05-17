@@ -32,9 +32,14 @@ syn region curlBodyBlock start="{" end="}" fold transparent contains=curlString,
 syn keyword curlArgs --data-raw 
 syn keyword curlArgs --header nextGroup=curlString skipwhite
 
+syn keyword curlTodo contained TODO FIXME XXX NOTE
+syn match curlComment "#.*$" contains=curlTodo
+
 let b:current_syntax = "curl"
 
 hi def link basicLanguageKeywords    Statement
 hi def link curlArgs                 Type
 hi def link curlString               String
 hi def link curlNumber               Number
+hi def link curlTodo                 Todo
+hi def link curlComment              Comment
